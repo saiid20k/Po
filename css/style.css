@@ -256,7 +256,7 @@ header .container nav .link ul li a.Active::before{
 .setting-box{
     display: none;
 }
-#dark_light{
+.dark_light{
     color: var(--secondary-color);
     font-weight: bold;
     line-height: 40px;

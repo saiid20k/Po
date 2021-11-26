@@ -9,7 +9,7 @@
     --third-color: #FAFAFA;
     --border-right: 1px solid #e8e4e4;
     --paragraph-color: #666;
-    --box-s: rgb(0 0 0 / 20%);
+    --box-s: 0px 2px 15px rgb(0 0 0 / 20%);
 }
 .dark-theme{
     --praimary-color: #000110;
@@ -18,7 +18,7 @@
     --border-right: 1px solid #524646;
     --paragraph-color: #cacaca;
     --main-color: #33ff39;
-    --box-s: rgb(124 118 118 / 13%);
+    --box-s: #fff 0px 0px 4px 1px;
 }
 *{
     margin: 0;
@@ -581,7 +581,7 @@ header .container nav .link ul li a.Active::before{
 .service .container .all .box{
     flex-basis: 32%;
     /* box-shadow: 0px 0px 4px 0px var(--secondary-color); */
-    box-shadow: 0px 2px 15px var(--box-s); 
+    box-shadow: var(--box-s); 
     margin-bottom: 20px;
     padding: 25px 15px;
     border-radius: 5px;
@@ -722,7 +722,7 @@ header .container nav .link ul li a.Active::before{
     align-items: center;
     font-size: 23px;
 }
-/* .work .container .projects .project .info h1::after{
+.work .container .projects .project .info h1::after{
     content: "";
     position: absolute;
     background-color: #D5D5D5;
@@ -731,7 +731,7 @@ header .container nav .link ul li a.Active::before{
     top: -17px;
     left: 55px;
     transform: skewX(-22deg);
-} */
+}
 
 
 .work .container .projects .project .info button{

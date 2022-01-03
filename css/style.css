@@ -833,6 +833,7 @@ header .container nav .link ul li a.Active::before{
     outline: none;
     border: 1px solid #DDD;
     position: relative;
+    caret-color: blue;
 }
 .contact .container .form-box form #message{
     display: block;
@@ -846,11 +847,13 @@ header .container nav .link ul li a.Active::before{
     outline: none;
     border: 1px solid #DDD;
     resize: none;
+    caret-color: blue;
 }
 .contact .container .form-box form #name:focus,
 .contact .container .form-box form #message:focus,
 .contact .container .form-box form #email:focus{
-    border-bottom: 3px solid #00eb00;
+    border-color: blue;
+    border-width: 2px;
 }
 .contact .container .form-box form span{
     position: absolute;

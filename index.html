@@ -23,6 +23,11 @@
 
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 
+    <script type="text/javascript " src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js "></script>
+
+
+
+
 </head>
 
 <body>
@@ -80,7 +85,7 @@
                                 </div>
 
                                 <div class="Language">
-                                    <span class="dark_light">Dark Mode</span>
+                                    <span class="dark_light" id="dark_light">Dark Mode</span>
                                     <!-- <button> <a href="./index-ar.html"> العربية </a> </button> -->
                                 </div>
                             </div>
@@ -89,8 +94,6 @@
                         </div>
                     </ul>
                 </div>
-
-
             </nav>
         </div>
 
@@ -102,11 +105,16 @@
                 <div class="left">
                     <h1> Hello! </h1>
                     <h3> My Name is<span> Saiid</span> </h3>
-                    <h5> Front End Developer </h5>
+                    <h5> Full Stack Developer </h5>
                     <p>
-                        A Professional Front End Developer With One Year Of Experience, I Have Passion Towards Coding.
+                        I am a Junior Full Stack Developer With over a 3 Years of Experience Developing Front End Web Applications, and 1 Year Experience of Developing Back End. I Have Passion Towards Coding.
+                        <!-- A Professional Front End Developer With One Year Of Experience, I Have Passion Towards Coding. -->
                     </p>
-                    <button> <a href="https://drive.google.com/uc?export=download&id=1SE_RJnnbi5YcyiP4S01hOQqORjRZF_m1"> Download My CV </a> </button>
+                    <button> 
+                        <a href="https://drive.google.com/uc?export=download&id=18j4mzbuW1XiX2r6gfHH5a0kiNBma1MTi"> 
+                            Download My CV 
+                        </a> 
+                    </button>
                 </div>
                 <div class="right">
                     <img src="./imgs/img-02.svg" alt="">
@@ -127,8 +135,8 @@
                     </div>
                     <div class="left" data-aos="fade-right" data-aos-delay="100" data-aos-easing="linear">
                         <p>
-                            I am a Junior Front End Developer With over a Year of Experience Developing Front End Web Applications. I create successful websites that are fast, easy to use, and built with best practices. I like to write semantic, cross browser compatible code by
-                            hand that is re-useable, maintainable and easy to understand.
+                            I am a Junior Full Stack Developer With over a 3 Years of Experience Developing Front End Web Applications, and 1 Year Experience of Developing Back End. I create successful websites that are fast, easy to use, and built with best practices. I like to
+                            write semantic, cross browser compatible code by hand that is re-useable, maintainable and easy to understand.
                         </p>
                     </div>
                 </div>
@@ -185,16 +193,16 @@
                     </div>
 
                     <div class="skiil back">
-                        <div class="skiil-name"> PHP </div>
+                        <div class="skiil-name"> PHP(Laravel Framework) </div>
                         <div class="skiil-progress">
-                            <div class="skiilPar" style="width: 0;" per="90" data-width="50%"></div>
+                            <div class="skiilPar" style="width: 0;" per="90" data-width="70%"></div>
                         </div>
                     </div>
 
                     <div class="skiil back">
-                        <div class="skiil-name"> MySQL </div>
+                        <div class="skiil-name"> MySQL(Database) </div>
                         <div class="skiil-progress">
-                            <div class="skiilPar" style="width: 0;" per="90" data-width="60%"></div>
+                            <div class="skiilPar" style="width: 0;" per="90" data-width="65%"></div>
                         </div>
                     </div>
 
@@ -394,8 +402,8 @@
 
                 </div>
                 <div class="more ">
-                    <button id="more "> + More Projects</button>
-                    <p id="message "></p>
+                    <button id="moreProjects " class="moreProjects "> + More Projects</button>
+                    <p id="message " class="moreProjectsMessage "></p>
                 </div>
             </div>
         </div>
@@ -438,14 +446,16 @@
                     </div>
 
                     <div class="form-box ">
-                        <form ac method="POST ">
+                        <form method="POST ">
                             <input type="text " name="name " id="name " placeholder="Enter Your Name : " class="username " required> 
                             <!-- <span class="one ">*</span> -->
                             <input type="email " name="email " id="email " placeholder="Enter Your E-mail : " class="email " required> 
                             <!-- <span class="two ">*</span> -->
                             <textarea name="message " id="message " placeholder="Message ..... " class="message " required></textarea>   
                             <!-- <span class="three ">*</span> -->
-                            <input type="submit " value="Send " name="send " id="send " class="submit ">                     
+                            <!-- <input type="submit " name="send " id="send " class="send submit ">                      -->
+                            <button name="send " id="send " class="submit send "> Send </button>
+                            <!-- <input type="submit " value="Send "> -->
                         </form>
                     </div>   
                     
@@ -500,65 +510,65 @@
 
 
     <script type="text/javascript " src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js "></script>
-    <script type="text/javascript ">
-            (function() {
-            emailjs.init("user_eU3DKWU9gh5F9cgJ4AZ4v ");
-            })();
 
 
+<script>
+        (function() {
+            emailjs.init("user_eU3DKWU9gh5F9cgJ4AZ4v");
+        })();
+        // window.onload = function() {
+            function validate() {
+                let name = document.querySelector(".username ");
+                let email = document.querySelector(".email ");
+                let msg = document.querySelector(".message ");
+                // var btn = document.getElementById("send ");
+                $(".submit ").on( "click ", function() {
 
-      function validate() {
-        let name = document.querySelector(".username ");
-        let email = document.querySelector(".email ");
-        let msg = document.querySelector(".message ");
-        let btn = document.querySelector(".submit ");
+                    event.preventDefault();
 
-        btn.addEventListener("click ", (e) => {
-          e.preventDefault();
-          if (name.value == " " || email.value == " " || msg.value == " ") {
-            emptyerror();
-          } else {
-            sendmail(name.value, email.value, msg.value);
-            success();
-          }
-        });
-      }
-      validate();
+                    if (name.value == " " || email.value == " " || msg.value == " ") {
+                        emptyerror();
+                        alert("Empty Error! ");
+                    } else {
+                        sendmail(name.value, email.value, msg.value);
+                        // alert("Thank You " + name + " !... I have Received Your Message. ");
+                        
+                    }
+                    
 
-      function sendmail(name, email, msg) {
-        emailjs.send("service_z4m53ns ","template_bp9vsz2 ",{
-            name: document.querySelector(".username ").value,
-            email: document.querySelector(".email ").value,
-            message: document.querySelector(".message ").value,
-        }).then(response=>{
-            alert("Thank You " + name + " !... I Have Received Your Message. ");
-        });
-      }
+                });
 
-      function emptyerror() {
-        Swal.fire({
-          icon: "error ",
-          title: "Oops... ",
-          text: "Fields cannot be empty! ",
-        });
-      }
+                // document.querySelector('.submit').addEventListener("click ", (e) => {
+                //     e.preventDefault();
+                //     if (name.value == " " || email.value == " " || msg.value == " ") {
+                //         emptyerror();
+                //     } else {
+                //         sendmail(name.value, email.value, msg.value);
+                //         success();
+                //     }
+                // });
+            }
+            validate();
+        // }
 
-      function error() {
-        Swal.fire({
-          icon: "error ",
-          title: "Oops... ",
-          text: "Something went wrong! ",
-        });
-      }
+        function sendmail(name, email, msg) {
+            emailjs.send("service_z4m53ns", "template_bp9vsz2", {
+                name: document.querySelector(".username ").value,
+                email: document.querySelector(".email ").value,
+                message: document.querySelector(".message ").value,
 
-      function success() {
-        Swal.fire({
-          icon: "success ",
-          title: "Success... ",
-          text: "Successfully sent message ",
-        });
-      }
-    </script>
+            }).then(response => {
+                // console.log(response);
+                alert("Thank You " + name + " !... I Have Received Your Message. ");
+                window.setTimeout(function(){location.reload()},2000)
+
+            },function(error) {
+                console.log('FAILED...', error);
+            });
+        }
+
+</script>
+    
 
 
 

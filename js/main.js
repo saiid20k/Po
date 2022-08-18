@@ -3,12 +3,12 @@
 let activeItem = document.querySelectorAll(".swit li a");
 
 activeItem.forEach((a) => {
-   
+
     a.addEventListener("click", removeActive);
 
 });
 
-function removeActive(){
+function removeActive() {
 
     activeItem.forEach((a) => {
 
@@ -28,8 +28,8 @@ let toggleBtn = document.getElementById("toggleBtn");
 
 let links = document.getElementById("links");
 
-toggleBtn.onclick = function () {
-  
+toggleBtn.onclick = function() {
+
     links.classList.toggle("menu");
     // links.style.display ="none";
 };
@@ -38,18 +38,18 @@ toggleBtn.onclick = function () {
 
 document.addEventListener("click", (e) => {
 
-    if(e.target !== toggleBtn && e.target !== links){
+    if (e.target !== toggleBtn && e.target !== links) {
 
-        if(links.classList.contains("menu")){
+        if (links.classList.contains("menu")) {
 
             links.classList.toggle("menu");
 
         }
 
-    } 
+    }
 });
 
-links.onclick = function (e) {
+links.onclick = function(e) {
 
     e.stopPropagation();
 
@@ -60,35 +60,39 @@ links.onclick = function (e) {
 
 // /////////////////////////////////////
 
+
+
 let iconDark = document.getElementById("iconDark");
 
 let logo = document.getElementById("logo");
 
-let dark_light = document.getElementById("dark_light");
+// let dark_light = document.getElementById("dark_light");
+let dark_light = document.querySelector(".dark_light");
+// console.log(dark_light);
 
-iconDark.onclick = function(){
-    
+iconDark.onclick = function() {
     document.body.classList.toggle("dark-theme");
-    
-    if(document.body.classList.contains("dark-theme")){
-    
+    // window.onload = function() {
+    if (document.body.classList.contains("dark-theme")) {
+
+
         iconDark.src = "imgs/sun.png";
 
-        logo.src ="imgs/logo-dark-removebg-preview.png";
+        logo.src = "imgs/logo-dark-removebg-preview.png";
 
-        dark_light.innerHTML ="Light Mode";
-    
+        dark_light.innerHTML = "Light Mode";
+
+
+    } else {
+
+        iconDark.src = "imgs/moon.png"
+
+        logo.src = "imgs/logo-light-1-removebg-preview.png";
+
+        dark_light.innerHTML = "Dark Mode";
     }
-    
-    else{
-    
-        iconDark.src ="imgs/moon.png"
+    // }
 
-        logo.src ="imgs/logo-light-1-removebg-preview.png";
-
-        dark_light.innerHTML ="Dark Mode";
-    
-    }
 }
 
 
@@ -96,10 +100,10 @@ iconDark.onclick = function(){
 ///////////////////////////////////////////////
 
 
-window.addEventListener("scroll", function(){
-    
+window.addEventListener("scroll", function() {
+
     let Header = document.querySelector("header");
-    
+
     Header.classList.toggle("sticky", window.scrollY > 0);
 
 })
@@ -128,7 +132,7 @@ window.addEventListener("scroll", function(){
 //         complate: function(){
 //             $this.attr('per',Math.floor(this.animatedValue) + '%');
 //         }
-    // });
+// });
 
 // });
 
@@ -138,26 +142,26 @@ let SkiilsContainer = document.getElementById('Skiils');
 
 let proBar = document.querySelectorAll('.skiil-progress .skiilPar');
 
-window.onscroll = function(){
+window.onscroll = function() {
 
-    if(window.scrollY >= SkiilsContainer.offsetTop - 430){
-        
+    if (window.scrollY >= SkiilsContainer.offsetTop - 430) {
+
         proBar.forEach((skillPar) => {
-        
+
             skillPar.style.width = skillPar.dataset.width;
-       
+
         })
 
-    }else{
+    } else {
 
         proBar.forEach((skillPar) => {
-        
+
             skillPar.style.width = 0;
-       
+
         })
 
     }
-    
+
 };
 
 
@@ -172,15 +176,23 @@ window.onscroll = function(){
 // End Animated Progress bar 
 
 
-let more = document.getElementById("more");
+// let more = document.getElementById("more");
 
 let message = document.getElementById("message");
 
-more.onclick = function(){
 
-    message.innerHTML = "You Can Find More Projects in My Github Account!";
+$(".moreProjects").click(function() {
 
-}
+    // console.log("clicked!");
+
+    $('.moreProjectsMessage').html("You Can Find More Projects in My Github Account!");
+})
+
+// document.getElementById("more").onclick = function() {
+
+//     message.innerHTML = "You Can Find More Projects in My Github Account!";
+
+// }
 
 
 
@@ -214,17 +226,17 @@ function RemoveActive() {
 }
 
 function ManageSkiils() {
- 
+
     element.forEach((element) => {
- 
+
         element.style.display = "none";
- 
+
     });
- 
+
     document.querySelectorAll(this.dataset.cat).forEach((el) => {
- 
+
         el.style.display = "block";
- 
+
     });
 
 }

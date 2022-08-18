@@ -102,7 +102,7 @@
     <section id="banner">
         <div class="banner">
             <div class="container">
-                <div class="left">
+                <div class="left"> 
                     <h1> Hello! </h1>
                     <h3> My Name is<span> Saiid</span> </h3>
                     <h5> Full Stack Developer </h5>
@@ -526,9 +526,8 @@
 
                     event.preventDefault();
 
-                    if (name.value == " " || email.value == " " || msg.value == " ") {
-                        emptyerror();
-                        alert("Empty Error! ");
+                    if (name.value == "" || email.value == "" || msg.value == "") {
+                        alert("Please fill all fields before send.");
                     } else {
                         sendmail(name.value, email.value, msg.value);
                         // alert("Thank You " + name + " !... I have Received Your Message. ");

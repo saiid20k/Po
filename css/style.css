@@ -1063,3 +1063,10 @@ i.footer-icon {
     color: var(--blue-color);
     transition: .5s;
 }
+
+
+/*  */
+
+#my_img {
+    pointer-events: none;
+}
